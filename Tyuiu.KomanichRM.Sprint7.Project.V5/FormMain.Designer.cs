@@ -37,6 +37,7 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 677);
             this.Name = "FormMain";
+            this.Text = "Команич Р. М.";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
