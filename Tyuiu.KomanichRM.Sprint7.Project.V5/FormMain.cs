@@ -22,5 +22,16 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
         {
 
         }
+
+        private void buttonProduct_Click(object sender, EventArgs e)
+        {
+            FormProducts formProducts = new FormProducts();
+            formProducts.ShowDialog();
+        }
+
+        private void toolTipMain_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }
