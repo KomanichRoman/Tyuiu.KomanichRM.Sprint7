@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tyuiu.KomanichRM.Sprint7.Project.V5.Lib;
+using System.IO;
 
 namespace Tyuiu.KomanichRM.Sprint7.Project.V5
 {
@@ -25,13 +26,135 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
 
         private void buttonProduct_Click(object sender, EventArgs e)
         {
-            FormProducts formProducts = new FormProducts();
-            formProducts.ShowDialog();
+            
         }
 
         private void toolTipMain_Popup(object sender, PopupEventArgs e)
         {
 
+        }
+        static string openFile;
+        static int rows;
+        static int columns;
+        static string[,] matrix;
+        DataService ds = new DataService();
+
+        private void buttonAddFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog.ShowDialog();
+                openFile = openFileDialog.FileName;
+
+                matrix = ds.LoadFromDataFile(openFile);
+                rows = matrix.GetLength(0);
+                columns = matrix.GetLength(1);
+
+                dataGridViewOpenFile.Rows.Clear();
+                dataGridViewOpenFile.Columns.Clear();
+                dataGridViewOpenFile.RowCount = rows + 1;
+                dataGridViewOpenFile.ColumnCount = columns + 1;
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        dataGridViewOpenFile.Rows[i].Cells[j].Value = matrix[i, j];
+                        dataGridViewOpenFile.Rows[i].Cells[j].Selected = false;
+                    }
+                }
+                this.dataGridViewOpenFile.DefaultCellStyle.Font = new Font("Tahoma", 9);
+                dataGridViewOpenFile.AutoResizeColumns();
+                comboBoxSort.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridViewOpenFile_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonSaveFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialog.FileName = ".csv";
+                saveFileDialog.InitialDirectory = @":C"; //дописать путь до опен фолдер
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string savepath = saveFileDialog.FileName;
+
+                    if (File.Exists(savepath)) File.Delete(savepath);
+
+                    int rows = dataGridViewOpenFile.RowCount - 1;
+                    int columns = dataGridViewOpenFile.ColumnCount - 1;
+
+                    StringBuilder strBuilder = new StringBuilder();
+
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            strBuilder.Append(dataGridViewOpenFile.Rows[i].Cells[j].Value);
+
+                            if (j != columns - 1) strBuilder.Append(";");
+                        }
+                        strBuilder.AppendLine();
+                    }
+                    File.WriteAllText(savepath, strBuilder.ToString(), Encoding.GetEncoding(1251));
+                    MessageBox.Show("Файл успешно сохранен", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Файл не сохранен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonAddColumns_Click(object sender, EventArgs e)
+        {
+            int columnsToAdd;
+            if (int.TryParse(textBoxAddColumns.Text, out columnsToAdd))
+            {
+                int existingColumnsCount = dataGridViewOpenFile.Columns.Count;
+                int newColumnsCount = existingColumnsCount + columnsToAdd;
+                for (int i = existingColumnsCount; i < newColumnsCount; i++)
+                {
+                    dataGridViewOpenFile.Columns.Add("Column" + (i + 1), "Column" + (i + 1));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите правильное целое число в поле ввода.");
+            }
+        }
+
+        private void buttonAddRows_Click(object sender, EventArgs e)
+        {
+            int rowsToAdd;
+            if (int.TryParse(textBoxAddRows.Text, out rowsToAdd))
+            {
+                int existingRowsCount = dataGridViewOpenFile.Columns.Count;
+                int newColumnsCount = existingRowsCount + rowsToAdd;
+                for (int i = existingRowsCount; i < newColumnsCount; i++)
+                {
+                    dataGridViewOpenFile.Rows.Add();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите правильное целое число в поле ввода.");
+            }
+        }
+
+        private void buttonСharts_Click(object sender, EventArgs e)
+        {
+            FormCharts formCharts = new FormCharts();
+            formCharts.ShowDialog();
         }
     }
 }
