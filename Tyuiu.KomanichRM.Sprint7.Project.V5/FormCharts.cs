@@ -26,8 +26,8 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
         {
             try
             {
-                openFileDialog.ShowDialog();
-                openFile = openFileDialog.FileName;
+                openFileDialogCharts.ShowDialog();
+                openFile = openFileDialogCharts.FileName;
 
                 matrix = ds.LoadFromDataFile(openFile);
                 rows = matrix.GetLength(0);
@@ -36,7 +36,7 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
                 dataGridViewOpenFile.Rows.Clear();
                 dataGridViewOpenFile.Columns.Clear();
                 dataGridViewOpenFile.RowCount = rows + 1;
-                dataGridViewOpenFile.ColumnCount = columns + 10;
+                dataGridViewOpenFile.ColumnCount = columns + 1;
 
                 for (int i = 0; i < rows; i++)
                 {

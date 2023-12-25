@@ -156,5 +156,71 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
             FormCharts formCharts = new FormCharts();
             formCharts.ShowDialog();
         }
+
+        private void buttonMean_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewOpenFile.SelectedCells.Count == 1)
+            {
+                DataGridViewCell selectedCell = dataGridViewOpenFile.SelectedCells[0];
+
+                string value = textBoxMean.Text;
+
+                selectedCell.Value = value;
+            }
+            if (dataGridViewOpenFile.SelectedCells.Count > 0)
+            {
+                DataGridViewCell currentCell = dataGridViewOpenFile.SelectedCells[0];
+                int nextCellIndex = currentCell.ColumnIndex + 1;
+                if (nextCellIndex < dataGridViewOpenFile.Columns.Count)
+                {
+                    currentCell.Selected = false;
+
+                    dataGridViewOpenFile.Rows[currentCell.RowIndex].Cells[nextCellIndex].Selected = true;
+
+                    dataGridViewOpenFile.FirstDisplayedScrollingColumnIndex = nextCellIndex;
+                }
+            }
+            textBoxMean.Text = "";
+        }
+
+        private void comboBoxResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonStat_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void buttonDeleteRow_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewOpenFile.SelectedCells.Count > 0)
+            {
+                int rowIndex = dataGridViewOpenFile.SelectedCells[0].RowIndex;
+                if (rowIndex != -1)
+                {
+                    dataGridViewOpenFile.Rows.RemoveAt(rowIndex);
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, выберите действительную ячейку");
+                }
+            }
+            else if (dataGridViewOpenFile.RowCount > 0)
+            {
+                dataGridViewOpenFile.Rows.RemoveAt(dataGridViewOpenFile.RowCount - 1);
+            }
+            else
+            {
+                MessageBox.Show("Нет строк для удаления");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
     }
 }

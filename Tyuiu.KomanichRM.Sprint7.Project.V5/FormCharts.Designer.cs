@@ -29,27 +29,27 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.buttonOpenFile = new System.Windows.Forms.Button();
             this.buttonDoneChart = new System.Windows.Forms.Button();
-            this.dataGridViewOpenFile = new System.Windows.Forms.DataGridView();
+            this.buttonOpenFile = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.chartFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.dataGridViewOpenFile = new System.Windows.Forms.DataGridView();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.openFileDialogCharts = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialogCharts = new System.Windows.Forms.SaveFileDialog();
             this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelTop.BackColor = System.Drawing.Color.LawnGreen;
             this.panelTop.Controls.Add(this.buttonDoneChart);
             this.panelTop.Controls.Add(this.buttonOpenFile);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,36 +57,6 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1232, 112);
             this.panelTop.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.chartFunction);
-            this.panel2.Controls.Add(this.dataGridViewOpenFile);
-            this.panel2.Controls.Add(this.splitter1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 112);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1232, 541);
-            this.panel2.TabIndex = 0;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 541);
-            this.splitter1.TabIndex = 0;
-            this.splitter1.TabStop = false;
-            // 
-            // buttonOpenFile
-            // 
-            this.buttonOpenFile.Location = new System.Drawing.Point(25, 13);
-            this.buttonOpenFile.Name = "buttonOpenFile";
-            this.buttonOpenFile.Size = new System.Drawing.Size(115, 69);
-            this.buttonOpenFile.TabIndex = 0;
-            this.buttonOpenFile.Text = "Открыть файл";
-            this.buttonOpenFile.UseVisualStyleBackColor = true;
-            this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
             // 
             // buttonDoneChart
             // 
@@ -98,38 +68,76 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
             this.buttonDoneChart.UseVisualStyleBackColor = true;
             this.buttonDoneChart.Click += new System.EventHandler(this.buttonDoneChart_Click);
             // 
-            // dataGridViewOpenFile
+            // buttonOpenFile
             // 
-            this.dataGridViewOpenFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOpenFile.ColumnHeadersVisible = false;
-            this.dataGridViewOpenFile.Location = new System.Drawing.Point(4, 4);
-            this.dataGridViewOpenFile.Name = "dataGridViewOpenFile";
-            this.dataGridViewOpenFile.RowHeadersVisible = false;
-            this.dataGridViewOpenFile.RowHeadersWidth = 51;
-            this.dataGridViewOpenFile.RowTemplate.Height = 24;
-            this.dataGridViewOpenFile.Size = new System.Drawing.Size(694, 534);
-            this.dataGridViewOpenFile.TabIndex = 1;
+            this.buttonOpenFile.Location = new System.Drawing.Point(25, 13);
+            this.buttonOpenFile.Name = "buttonOpenFile";
+            this.buttonOpenFile.Size = new System.Drawing.Size(115, 69);
+            this.buttonOpenFile.TabIndex = 0;
+            this.buttonOpenFile.Text = "Открыть файл";
+            this.buttonOpenFile.UseVisualStyleBackColor = true;
+            this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.chartFunction);
+            this.panel2.Controls.Add(this.dataGridViewOpenFile);
+            this.panel2.Controls.Add(this.splitter1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 112);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1232, 541);
+            this.panel2.TabIndex = 0;
             // 
             // chartFunction
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartFunction.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartFunction.Legends.Add(legend2);
-            this.chartFunction.Location = new System.Drawing.Point(704, 4);
+            this.chartFunction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartFunction.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartFunction.Legends.Add(legend1);
+            this.chartFunction.Location = new System.Drawing.Point(626, 6);
             this.chartFunction.Name = "chartFunction";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartFunction.Series.Add(series2);
-            this.chartFunction.Size = new System.Drawing.Size(516, 525);
+            this.chartFunction.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.BorderColor = System.Drawing.Color.Black;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Lime;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ShadowColor = System.Drawing.Color.Lime;
+            this.chartFunction.Series.Add(series1);
+            this.chartFunction.Size = new System.Drawing.Size(594, 523);
             this.chartFunction.TabIndex = 2;
             this.chartFunction.Text = "chart1";
             // 
-            // openFileDialog
+            // dataGridViewOpenFile
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
+            this.dataGridViewOpenFile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridViewOpenFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOpenFile.ColumnHeadersVisible = false;
+            this.dataGridViewOpenFile.Location = new System.Drawing.Point(9, 6);
+            this.dataGridViewOpenFile.Name = "dataGridViewOpenFile";
+            this.dataGridViewOpenFile.ReadOnly = true;
+            this.dataGridViewOpenFile.RowHeadersVisible = false;
+            this.dataGridViewOpenFile.RowHeadersWidth = 51;
+            this.dataGridViewOpenFile.RowTemplate.Height = 24;
+            this.dataGridViewOpenFile.Size = new System.Drawing.Size(611, 523);
+            this.dataGridViewOpenFile.TabIndex = 1;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 541);
+            this.splitter1.TabIndex = 0;
+            this.splitter1.TabStop = false;
+            // 
+            // openFileDialogCharts
+            // 
+            this.openFileDialogCharts.FileName = "openFileDialog1";
             // 
             // FormCharts
             // 
@@ -142,8 +150,8 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
             this.Text = "Графики";
             this.panelTop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -157,7 +165,7 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
         private System.Windows.Forms.DataGridView dataGridViewOpenFile;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFunction;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialogCharts;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogCharts;
     }
 }
