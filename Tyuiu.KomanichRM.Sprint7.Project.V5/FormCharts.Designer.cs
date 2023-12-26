@@ -29,9 +29,9 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelTop = new System.Windows.Forms.Panel();
             this.buttonDoneChart = new System.Windows.Forms.Button();
             this.buttonOpenFile = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
             // 
             // buttonDoneChart
             // 
-            this.buttonDoneChart.Location = new System.Drawing.Point(213, 13);
+            this.buttonDoneChart.Location = new System.Drawing.Point(201, 13);
             this.buttonDoneChart.Name = "buttonDoneChart";
             this.buttonDoneChart.Size = new System.Drawing.Size(115, 69);
             this.buttonDoneChart.TabIndex = 0;
@@ -93,22 +93,22 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
             // chartFunction
             // 
             this.chartFunction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            chartArea1.Name = "ChartArea1";
-            this.chartFunction.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartFunction.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartFunction.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartFunction.Legends.Add(legend2);
             this.chartFunction.Location = new System.Drawing.Point(626, 6);
             this.chartFunction.Name = "chartFunction";
             this.chartFunction.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.BorderColor = System.Drawing.Color.Black;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Lime;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ShadowColor = System.Drawing.Color.Lime;
-            this.chartFunction.Series.Add(series1);
+            series2.BorderColor = System.Drawing.Color.Black;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Lime;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series2.ShadowColor = System.Drawing.Color.Lime;
+            this.chartFunction.Series.Add(series2);
             this.chartFunction.Size = new System.Drawing.Size(594, 523);
             this.chartFunction.TabIndex = 2;
             this.chartFunction.Text = "chart1";

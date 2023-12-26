@@ -1,7 +1,7 @@
 ﻿
 namespace Tyuiu.KomanichRM.Sprint7.Project.V5
 {
-    partial class FormAbout
+    partial class FormGuide
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,29 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            this.textBoxAbout = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGuide));
+            this.textBoxGuide = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBoxAbout
+            // textBoxGuide
             // 
-            this.textBoxAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBoxAbout.Location = new System.Drawing.Point(32, 29);
-            this.textBoxAbout.Multiline = true;
-            this.textBoxAbout.Name = "textBoxAbout";
-            this.textBoxAbout.ReadOnly = true;
-            this.textBoxAbout.Size = new System.Drawing.Size(404, 176);
-            this.textBoxAbout.TabIndex = 0;
-            this.textBoxAbout.Text = resources.GetString("textBoxAbout.Text");
+            this.textBoxGuide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxGuide.Location = new System.Drawing.Point(12, 13);
+            this.textBoxGuide.Multiline = true;
+            this.textBoxGuide.Name = "textBoxGuide";
+            this.textBoxGuide.Size = new System.Drawing.Size(776, 375);
+            this.textBoxGuide.TabIndex = 0;
+            this.textBoxGuide.Text = resources.GetString("textBoxGuide.Text");
             // 
-            // FormAbout
+            // FormGuide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LawnGreen;
-            this.ClientSize = new System.Drawing.Size(462, 233);
-            this.Controls.Add(this.textBoxAbout);
-            this.Name = "FormAbout";
-            this.Text = "О разработчике";
+            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.Controls.Add(this.textBoxGuide);
+            this.Name = "FormGuide";
+            this.Text = "Краткое руководство";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -60,6 +59,6 @@ namespace Tyuiu.KomanichRM.Sprint7.Project.V5
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxAbout;
+        private System.Windows.Forms.TextBox textBoxGuide;
     }
 }
